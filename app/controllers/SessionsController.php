@@ -48,7 +48,8 @@ class SessionsController extends \BaseController {
 		{
 			// if everything matches, Laravel will create a session
 			// and we can access it via Auth::user()
-			return "Logged in as " . Auth::user()->emailaddress;
+			$email = Auth::user()->emailaddress;
+			return View::make('sessions.index')->with('email', "$email");
 		}else{
 			//return "Unsuccessful login attempt.";
 			return Redirect::back()->withInput();
