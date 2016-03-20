@@ -1,7 +1,7 @@
 @extends('layouts.basic')
 
 @section('maincontent')
-    {{Form::open(['route'=>'content'])}}
+    {{Form::open(['route'=>'session.store'])}}
     <div>
         {{Form::label('emailaddress', 'Email Address:')}}
         {{Form::email('emailaddress')}}

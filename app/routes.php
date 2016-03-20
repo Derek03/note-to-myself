@@ -22,7 +22,7 @@
 //Route::get('logout', 'SessionsController@destroy');
 Route::resource('/', 'UsersController');
 
-Route::post('content', 'SessionsController@store');
+Route::resource('session', 'SessionsController');
 
 Route::post("create", 'UsersController@create');
 
