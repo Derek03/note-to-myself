@@ -3,7 +3,7 @@
 @section('maincontent')
     <h1>Register</h1>
 
-    {{Form::open(['route'=>'create'])}}
+    {{Form::open(['route'=>'store'])}}
     <div>
         {{Form::label('emailaddress', 'Email Address: ')}}
         {{Form::text('emailaddress')}}

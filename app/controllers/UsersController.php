@@ -53,7 +53,7 @@ class UsersController extends \BaseController
 
 		$this->user->save();
 
-		return Redirect::route('mainpage');
+		return Redirect::route('index');
 	}
 
 

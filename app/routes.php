@@ -26,6 +26,6 @@ Route::resource('session', 'SessionsController');
 
 Route::post("create", 'UsersController@create');
 
-Route::get('mainpage', function() {
+Route::post('mainpage', function() {
 	return "This is the main page";
 })->before('auth');
