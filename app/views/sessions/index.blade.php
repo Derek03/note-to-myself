@@ -36,7 +36,7 @@
                 @foreach ($array[3] as $image)
                     <div>
                         {{$image}}
-                        <img src='{{$image}}' alt=image>
+                        <img src='public/uploads/{{$image}}' alt=image>
                     </div>
                 @endforeach
 

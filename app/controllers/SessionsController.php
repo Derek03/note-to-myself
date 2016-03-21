@@ -29,7 +29,7 @@ class SessionsController extends \BaseController {
 			$files = File::files('public/uploads');
 			$i = 0;
 			foreach($files as $file){
-				if($file == (glob($array[0] . "*.{jpg,png}"))){
+				if(preg_match('/[$array[0]/', $file )) {
 					$images[$i] = $file;
 				}
 				$i++;
@@ -92,7 +92,7 @@ class SessionsController extends \BaseController {
 			$files = File::files('public/uploads');
 			$i = 0;
 			foreach($files as $file){
-				if($file == (glob($array[0] . "*.{jpg,png}"))){
+				if (preg_match('/[$array[0]/', $file )) {
 					$images[$i] = $file;
 				}
 				$i++;
