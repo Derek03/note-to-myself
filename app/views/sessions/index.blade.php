@@ -6,7 +6,7 @@
 @section('maincontent')
 <div id="wrapper">
     {{Form::open(['route'=>'update'])}}
-        <h2 id="header">{{$email}} - <span><a href="logout.php">Log out</a></span></h2>
+        <h2 id="header">{{$email}} - <span>{{HTML::link('logout', 'Log out')}}</span></h2>
 
 
         <div id="section1">

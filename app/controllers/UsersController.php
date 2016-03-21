@@ -90,7 +90,7 @@ class UsersController extends \BaseController
 	 */
 	public function update($id)
 	{
-
+		//
 	}
 
 
@@ -103,5 +103,16 @@ class UsersController extends \BaseController
 	public function destroy($id)
 	{
 		//
+	}
+
+	public function upload()
+	{
+		$notes = Input::get('notes');
+		$tbd = Input::get('tbd');
+		$email = $this->user->emailaddress;
+		echo $email;
+		//$file = fopen("emaillist.txt","w");
+		//fwrite($file,$email);
+		//fclose($file);
 	}
 }
