@@ -118,8 +118,9 @@ class UsersController extends \BaseController
 			$filename = $image->getClientOriginalName();
 			Input::file('i')->move($destinationPath, $email ."-". $filename);
 		}
-		//if($link = Input::get('websites[]'){
-		//}
+		if($link = Input::get('websites[]')){
+
+		}
 		$filenotes = fopen('public/notes/'. $email . "-notes.txt","w");
 		$filetbd = fopen('public/tbd/'. $email . "-tbd.txt", "w");
 		fwrite($filenotes,$notes);
