@@ -35,9 +35,8 @@ class SessionsController extends \BaseController {
 			$files = File::files('public/upload');
 
 			$i = 0;
-			$email = $array[0];
 			foreach($files as $file){
-				if(preg_match('/[$email]/', $file )) {
+				if (strpos($array[0], $file) === false) {
 					$images[$i] = $file;
 				}
 				$i++;
@@ -118,9 +117,8 @@ class SessionsController extends \BaseController {
 
 			$files = File::files('public/upload');
 			$i = 0;
-			$email = $array[0];
 			foreach($files as $file){
-				if (preg_match('/[$email]/', $file )) {
+				if (strpos($array[0], $file) === false) {
 					$images[$i] = $file;
 				}
 				$i++;
