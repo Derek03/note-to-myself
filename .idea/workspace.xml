@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="631b1f5f-1b9e-4f34-9592-b182cc8e2da9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/database.php" afterPath="$PROJECT_DIR$/app/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/FileController.php" afterPath="$PROJECT_DIR$/app/controllers/FileController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/SessionsController.php" afterPath="$PROJECT_DIR$/app/controllers/SessionsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/UsersController.php" afterPath="$PROJECT_DIR$/app/controllers/UsersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/sessions/index.blade.php" afterPath="$PROJECT_DIR$/app/views/sessions/index.blade.php" />
     </list>
     <ignored path="note-to-self.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +27,7 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48849797">
+            <state vertical-scroll-proportion="0.48915988">
               <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
@@ -312,6 +306,13 @@
       <option name="number" value="Default" />
       <updated>1458512517930</updated>
     </task>
+    <task id="LOCAL-00001" summary="notes and tbd saving">
+      <created>1458531238230</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1458531238230</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -320,6 +321,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14239483" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24178404" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -339,6 +341,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="notes and tbd saving" />
+    <option name="LAST_COMMIT_MESSAGE" value="notes and tbd saving" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -588,7 +594,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48849797">
+        <state vertical-scroll-proportion="0.48915988">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
