@@ -26,6 +26,8 @@ Route::resource('session', 'SessionsController');
 
 Route::post("create", 'UsersController@create');
 
+Route::resource('fileupload', 'FileController');
+
 Route::post('mainpage', function() {
 	return "This is the main page";
 })->before('auth');
