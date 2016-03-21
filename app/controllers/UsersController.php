@@ -107,14 +107,19 @@ class UsersController extends \BaseController
 
 	public function upload()
 	{
-		//$image = Input::file('i');
-		//$destinationPath = public_path().'/upload';
-		//$filename = $image->getClientOriginalName();
-		//Input::file('i')->move($destinationPath, $filename);
-
+		//$imgs = new CreateImagesTable();
+		//notes
 		$notes = Input::get('notes');
 		$tbd = Input::get('tbd');
 		$email = Auth::user()->emailaddress;
+		//images
+		if($image = Input::file('i')) {
+			$destinationPath = public_path() . '/upload';
+			$filename = $image->getClientOriginalName();
+			Input::file('i')->move($destinationPath, $filename);
+		}
+		//if($link = Input::get('websites[]'){
+		//}
 		$filenotes = fopen('public/notes/'. $email . "-notes.txt","w");
 		$filetbd = fopen('public/tbd/'. $email . "-tbd.txt", "w");
 		fwrite($filenotes,$notes);
