@@ -14,11 +14,16 @@ class FileController extends \BaseController {
     }
 
     public function upload(){
+        //save image file
         $image = Input::file('i');
-        $destinationPath = public_path().'/upload';
+        $imagePath = public_path().'/upload';
         $filename = $image->getClientOriginalName();
-        Input::file('i')->move($destinationPath, $filename);
-        return Redirect::route('/session');
+        Input::file('i')->move($imagePath, $filename);
+        //save user URL's
+        $url = Input::get('websites[]');
+        $sitePath = public_path().'/sites';
+
+
     }
 
 }
