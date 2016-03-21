@@ -116,7 +116,7 @@ class UsersController extends \BaseController
 		if($image = Input::file('i')) {
 			$destinationPath = public_path() . '/upload';
 			$filename = $image->getClientOriginalName();
-			Input::file('i')->move($destinationPath, $filename);
+			Input::file('i')->move($destinationPath, $email ."-". $filename);
 		}
 		//if($link = Input::get('websites[]'){
 		//}
