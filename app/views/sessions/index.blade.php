@@ -6,14 +6,14 @@
 @section('maincontent')
 <div id="wrapper">
     {{Form::open(array('action' => 'UsersController@upload', 'files'=>true))}}
-        <h2 id="header">{{$email}} - <span>{{HTML::link('logout', 'Log out')}}</span></h2>
+        <h2 id="header">{{$array[0]}} - <span>{{HTML::link('logout', 'Log out')}}</span></h2>
 
 
         <div id="section1">
 
             <div id="column1">
                 <h2>notes</h2>
-                {{ Form::textarea('notes', null, ['size' => '16x40']) }}
+                {{ Form::textarea('notes', $array[1], ['size' => '16x40']) }}
             </div>
 
             <div id="column2">
@@ -48,7 +48,7 @@
 
             <div id="column4">
                 <h2>tbd</h2>
-                {{ Form::textarea('tbd', null, ['size' => '16x40']) }}
+                {{ Form::textarea('tbd', $array[2], ['size' => '16x40']) }}
             </div>
 
         </div>

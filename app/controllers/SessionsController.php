@@ -10,9 +10,17 @@ class SessionsController extends \BaseController {
 	public function index()
 	{
 		if (Auth::check()) {
-			$email = Auth::user()->emailaddress;
-
-			return View::make('sessions.index')->with('email', "$email");
+			$array = array();
+			$array[0] = Auth::user()->emailaddress;
+			$array[1] = "";
+			$array[2] = "";
+			if(file_exists('public/notes/'. $array[0] . "-notes.txt")) {
+				$array[1] = file_get_contents('public/notes/'. $array[0] . "-notes.txt");
+			}
+			if(file_exists('public/tbd/'. $array[0] . "-tbd.txt")) {
+				$array[2] = file_get_contents('public/tbd/'. $array[0] . "-tbd.txt");
+			}
+			return View::make('sessions.index')->with('array', $array);
 		}else{
 			return Redirect::route('/'); //form
 		}
@@ -50,8 +58,17 @@ class SessionsController extends \BaseController {
 		{
 			// if everything matches, Laravel will create a session
 			// and we can access it via Auth::user()
-			$email = Auth::user()->emailaddress;
-			return View::make('sessions.index')->with('email', "$email");
+			$array = array();
+			$array[0] = Auth::user()->emailaddress;
+			$array[1] = "";
+			$array[2] = "";
+			if(file_exists('public/notes/'. $array[0] . "-notes.txt")) {
+				$array[1] = file_get_contents('public/notes/'. $array[0] . "-notes.txt");
+			}
+			if(file_exists('public/tbd/'. $array[0] . "-tbd.txt")) {
+				$array[2] = file_get_contents('public/tbd/'. $array[0] . "-tbd.txt");
+			}
+			return View::make('sessions.index')->with('array', $array);
 		}else{
 			//return "Unsuccessful login attempt.";
 			return Redirect::back()->withInput();
