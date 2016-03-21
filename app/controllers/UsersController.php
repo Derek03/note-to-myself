@@ -105,7 +105,7 @@ class UsersController extends \BaseController
 		//
 	}
 
-	public function upload()
+	public function uploader()
 	{
 		//$imgs = new CreateImagesTable();
 		//notes
