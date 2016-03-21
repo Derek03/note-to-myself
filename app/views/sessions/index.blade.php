@@ -5,7 +5,7 @@
 
 @section('maincontent')
 <div id="wrapper">
-    <form action="upload" enctype="multipart/form-data" method="post">
+    {{Form::open(['route'=>'update'])}}
         <h2 id="header">{{$email}} - <span><a href="logout.php">Log out</a></span></h2>
 
 
@@ -13,7 +13,7 @@
 
             <div id="column1">
                 <h2>notes</h2>
-                <textarea cols="16" rows="40" id="notes" name="notes" /></textarea>
+                {{ Form::textarea('notes', null, ['size' => '16x40']) }}
             </div>
 
             <div id="column2">
@@ -48,15 +48,15 @@
 
             <div id="column4">
                 <h2>tbd</h2>
-                <textarea cols="16" rows="40" id="tbd" name="tbd" /></textarea>
+                {{ Form::textarea('tbd', null, ['size' => '16x40']) }}
             </div>
 
         </div>
 
         <div id="footer">
-            <input type="submit" value="Save" style="width:200px;height:80px" name="submitting" />
+            {{Form::submit('Save')}}
         </div>
-    </form>
+    {{Form::close()}}
 </div>
 
 
