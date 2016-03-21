@@ -10,7 +10,9 @@ class SessionsController extends \BaseController {
 	public function index()
 	{
 		if (Auth::check()) {
-			return "Logged in as " . Auth::user()->emailaddress;
+			$email = Auth::user()->emailaddress;
+
+			return View::make('sessions.index')->with('email', "$email");
 		}else{
 			return Redirect::route('/'); //form
 		}
@@ -99,10 +101,9 @@ class SessionsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy()
 	{
-		Auth::logout();
-		return Redirect::route('/'); // form
+		return Redirect::route('index'); // form
 	}
 
 

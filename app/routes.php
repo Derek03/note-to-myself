@@ -11,22 +11,15 @@
 |
 */
 
-/*Route::get('/', function()
-{
-	return View::make('hello');
-});*/
-
-//Route::resource('users', 'UsersController');
-
-//Route::get('login', 'SessionsController@create');
-//Route::get('logout', 'SessionsController@destroy');
 Route::resource('/', 'UsersController');
 
 Route::resource('session', 'SessionsController');
 
 Route::post("create", 'UsersController@create');
 
-Route::resource('fileupload', 'FileController');
+Route::post('upload', ['uses' =>'UsersController@upload']);
+
+Route::get("logout", 'SessionsController@destroy');
 
 Route::post('mainpage', function() {
 	return "This is the main page";

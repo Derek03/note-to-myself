@@ -5,9 +5,8 @@
 
 @section('maincontent')
 <div id="wrapper">
-    {{Form::open(['route'=>'update'],array('action' => 'FileController@upload', 'files'=>true))}}
-        <h2 id="header">{{$email}} - <span><a href="logout.php">Log out</a></span></h2>
-
+    {{Form::open(array('action' => 'UsersController@upload', 'files'=>true))}}
+        <h2 id="header">{{$email}} - <span>{{HTML::link('logout', 'Log out')}}</span></h2>
 
         <div id="section1">
 
