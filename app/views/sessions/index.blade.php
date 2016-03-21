@@ -33,8 +33,8 @@
             <div id="column3">
                 <h2>images</h2><h3>click for full size</h3>
                 <!-- <textarea cols="16" rows="40" id="image" name="image" /></textarea> -->
-
                 <input type="file" name="i" /><br /><br />
+
 
 
                 <div>
