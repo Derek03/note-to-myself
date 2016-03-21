@@ -20,7 +20,3 @@ Route::post("create", 'UsersController@create');
 Route::post('uploader', ['uses' =>'UsersController@uploader']);
 
 Route::get("logout", 'SessionsController@destroy');
-
-Route::post('mainpage', function() {
-	return "This is the main page";
-})->before('auth');
