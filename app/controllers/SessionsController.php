@@ -32,7 +32,7 @@ class SessionsController extends \BaseController {
 				$array[2] = file_get_contents('public/tbd/'. $array[0] . "-tbd.txt");
 			}
 
-			$files = File::files('public/uploads');
+			$files = File::files('public/upload');
 
 			$i = 0;
 			foreach($files as $file){
@@ -115,7 +115,7 @@ class SessionsController extends \BaseController {
 			}
 
 
-			$files = File::files('public/uploads');
+			$files = File::files('public/upload');
 			$i = 0;
 			foreach($files as $file){
 				if (preg_match('/[$array[0]/', $file )) {
