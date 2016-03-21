@@ -18,10 +18,10 @@
             <div id="column2">
                 <h2>websites</h2><h3>click to open</h3>
 
-                <input type="text" name="websites[]" /><br >
-                <input type="text" name="websites[]" /><br >
-                <input type="text" name="websites[]" /><br >
-                <input type="text" name="websites[]" /><br >
+                <input type="text" name="websites1" value="<a href={{$array[4]}}>{{$array[4]}}</a>" /><br >
+                <input type="text" name="websites2" /><br >
+                <input type="text" name="websites3" /><br >
+                <input type="text" name="websites4" /><br >
 
             </div>
 

@@ -118,8 +118,25 @@ class UsersController extends \BaseController
 			$filename = $image->getClientOriginalName();
 			Input::file('i')->move($destinationPath, $email ."-". $filename);
 		}
-		if($link = Input::get('websites[]')){
-
+		if($link1 = Input::get('websites1')){
+			$site1 = fopen('public/sites/'. $email . "-site1.txt","w");
+			fwrite($site1,$link1);
+			fclose($site1);
+		}
+		if($link2 = Input::get('websites2')){
+			$site2 = fopen('public/sites/'. $email . "-site2.txt","w");
+			fwrite($site2,$link2);
+			fclose($site2);
+		}
+		if($link3 = Input::get('websites3')){
+			$site3 = fopen('public/sites/'. $email . "-site3.txt","w");
+			fwrite($site3,$link3);
+			fclose($site3);
+		}
+		if($link4 = Input::get('websites4')){
+			$site4 = fopen('public/sites/'. $email . "-site4.txt","w");
+			fwrite($site4,$link4);
+			fclose($site4);
 		}
 		$filenotes = fopen('public/notes/'. $email . "-notes.txt","w");
 		$filetbd = fopen('public/tbd/'. $email . "-tbd.txt", "w");

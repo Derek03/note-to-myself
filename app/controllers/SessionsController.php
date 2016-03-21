@@ -20,13 +20,18 @@ class SessionsController extends \BaseController {
 			$array[1] = "";
 			$array[2] = "";
 			$array[3] = "";
+			$array[4] = "";
+			$array[5] = "";
+			$array[6] = "";
+			$array[7] = "";
+
  			if(file_exists('public/notes/'. $array[0] . "-notes.txt")) {
 				$array[1] = file_get_contents('public/notes/'. $array[0] . "-notes.txt");
 			}
 			if(file_exists('public/tbd/'. $array[0] . "-tbd.txt")) {
 				$array[2] = file_get_contents('public/tbd/'. $array[0] . "-tbd.txt");
 			}
-			$files = scandir('public/uploads/');
+			$files = scandir('public/upload/');
 			$i = 0;
 			foreach($files as $file){
 				if($file == (glob($array[0] . "*.{jpg,png}"))){
@@ -35,6 +40,19 @@ class SessionsController extends \BaseController {
 				$i++;
 			}
 			$array[3] = $images;
+			//urls
+			if(file_exists('public/sites/'. $array[0] . "-site1.txt")) {
+				$array[4] = file_get_contents('public/sites/'. $array[0] . "-site1.txt");
+			}
+			if(file_exists('public/sites/'. $array[0] . "-site2.txt")) {
+				$array[5] = file_get_contents('public/sites/'. $array[0] . "-site2.txt");
+			}
+			if(file_exists('public/sites/'. $array[0] . "-site3.txt")) {
+				$array[6] = file_get_contents('public/sites/'. $array[0] . "-site3.txt");
+			}
+			if(file_exists('public/sites/'. $array[0] . "-site4.txt")) {
+				$array[7] = file_get_contents('public/sites/'. $array[0] . "-site4.txt");
+			}
 			return View::make('sessions.index')->with('array', $array);
 		}else{
 			return Redirect::route('/'); //form
@@ -82,13 +100,18 @@ class SessionsController extends \BaseController {
 			$array[0] = Auth::user()->emailaddress;
 			$array[1] = "";
 			$array[2] = "";
+			$array[3] = "";
+			$array[4] = "";
+			$array[5] = "";
+			$array[6] = "";
+			$array[7] = "";
 			if(file_exists('public/notes/'. $array[0] . "-notes.txt")) {
 				$array[1] = file_get_contents('public/notes/'. $array[0] . "-notes.txt");
 			}
 			if(file_exists('public/tbd/'. $array[0] . "-tbd.txt")) {
 				$array[2] = file_get_contents('public/tbd/'. $array[0] . "-tbd.txt");
 			}
-			$files = scandir('public/uploads/');
+			$files = scandir('public/upload/');
 			$i = 0;
 			foreach($files as $file){
 				if($file == (glob($array[0] . "*.{jpg,png}"))){
@@ -97,6 +120,19 @@ class SessionsController extends \BaseController {
 				$i++;
 			}
 			$array[3] = $images;
+			//urls
+			if(file_exists('public/sites/'. $array[0] . "-site1.txt")) {
+				$array[4] = file_get_contents('public/sites/'. $array[0] . "-site1.txt");
+			}
+			if(file_exists('public/sites/'. $array[0] . "-site2.txt")) {
+				$array[5] = file_get_contents('public/sites/'. $array[0] . "-site2.txt");
+			}
+			if(file_exists('public/sites/'. $array[0] . "-site3.txt")) {
+				$array[6] = file_get_contents('public/sites/'. $array[0] . "-site3.txt");
+			}
+			if(file_exists('public/sites/'. $array[0] . "-site4.txt")) {
+				$array[7] = file_get_contents('public/sites/'. $array[0] . "-site4.txt");
+			}
 			return View::make('sessions.index')->with('array', $array);
 		}else{
 			//return "Unsuccessful login attempt.";
