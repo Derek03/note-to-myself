@@ -33,8 +33,7 @@
                 <h2>images</h2><h3>click for full size</h3>
                 <!-- <textarea cols="16" rows="40" id="image" name="image" /></textarea> -->
                 {{ Form::file('i') }}
-
-
+                <img src='{{$array[3]}}' alt="">
 
                 <div>
 

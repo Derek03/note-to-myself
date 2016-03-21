@@ -10,16 +10,31 @@ class SessionsController extends \BaseController {
 	public function index()
 	{
 		if (Auth::check()) {
+			$images = array();
+			$images[0] = "";
+			$images[1] = "";
+			$images[2] = "";
+			$images[3] = "";
 			$array = array();
 			$array[0] = Auth::user()->emailaddress;
 			$array[1] = "";
 			$array[2] = "";
-			if(file_exists('public/notes/'. $array[0] . "-notes.txt")) {
+			$array[3] = "";
+ 			if(file_exists('public/notes/'. $array[0] . "-notes.txt")) {
 				$array[1] = file_get_contents('public/notes/'. $array[0] . "-notes.txt");
 			}
 			if(file_exists('public/tbd/'. $array[0] . "-tbd.txt")) {
 				$array[2] = file_get_contents('public/tbd/'. $array[0] . "-tbd.txt");
 			}
+			$files = scandir('public/uploads/');
+			$i = 0;
+			foreach($files as $file){
+				if($file == (glob($array[0] . "*.{jpg,png}"))){
+					$images[$i] = $file;
+				}
+				$i++;
+			}
+			$array[3] = $images;
 			return View::make('sessions.index')->with('array', $array);
 		}else{
 			return Redirect::route('/'); //form
@@ -58,6 +73,11 @@ class SessionsController extends \BaseController {
 		{
 			// if everything matches, Laravel will create a session
 			// and we can access it via Auth::user()
+			$images = array();
+			$images[0] = "";
+			$images[1] = "";
+			$images[2] = "";
+			$images[3] = "";
 			$array = array();
 			$array[0] = Auth::user()->emailaddress;
 			$array[1] = "";
@@ -68,6 +88,15 @@ class SessionsController extends \BaseController {
 			if(file_exists('public/tbd/'. $array[0] . "-tbd.txt")) {
 				$array[2] = file_get_contents('public/tbd/'. $array[0] . "-tbd.txt");
 			}
+			$files = scandir('public/uploads/');
+			$i = 0;
+			foreach($files as $file){
+				if($file == (glob($array[0] . "*.{jpg,png}"))){
+					$images[$i] = $file;
+				}
+				$i++;
+			}
+			$array[3] = $images;
 			return View::make('sessions.index')->with('array', $array);
 		}else{
 			//return "Unsuccessful login attempt.";
