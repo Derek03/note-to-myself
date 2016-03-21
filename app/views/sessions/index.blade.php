@@ -8,7 +8,6 @@
     {{Form::open(array('action' => 'UsersController@upload', 'files'=>true))}}
         <h2 id="header">{{$array[0]}} - <span>{{HTML::link('logout', 'Log out')}}</span></h2>
 
-
         <div id="section1">
 
             <div id="column1">
@@ -33,7 +32,7 @@
             <div id="column3">
                 <h2>images</h2><h3>click for full size</h3>
                 <!-- <textarea cols="16" rows="40" id="image" name="image" /></textarea> -->
-                <input type="file" name="i" /><br /><br />
+                {{ Form::file('i') }}
 
 
 

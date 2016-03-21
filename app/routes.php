@@ -11,15 +11,6 @@
 |
 */
 
-/*Route::get('/', function()
-{
-	return View::make('hello');
-});*/
-
-//Route::resource('users', 'UsersController');
-
-//Route::get('login', 'SessionsController@create');
-//Route::get('logout', 'SessionsController@destroy');
 Route::resource('/', 'UsersController');
 
 Route::resource('session', 'SessionsController');
@@ -27,8 +18,6 @@ Route::resource('session', 'SessionsController');
 Route::post("create", 'UsersController@create');
 
 Route::post('upload', ['uses' =>'UsersController@upload']);
-
-//Route::post('fileupload', 'FileController');
 
 Route::get("logout", 'SessionsController@destroy');
 
