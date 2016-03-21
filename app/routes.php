@@ -26,7 +26,9 @@ Route::resource('session', 'SessionsController');
 
 Route::post("create", 'UsersController@create');
 
-Route::resource('fileupload', 'FileController');
+Route::post('upload', ['uses' =>'UsersController@upload']);
+
+//Route::post('fileupload', 'FileController');
 
 Route::get("logout", 'SessionsController@destroy');
 

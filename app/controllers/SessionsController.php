@@ -10,7 +10,9 @@ class SessionsController extends \BaseController {
 	public function index()
 	{
 		if (Auth::check()) {
-			return "Logged in as " . Auth::user()->emailaddress;
+			$email = Auth::user()->emailaddress;
+
+			return View::make('sessions.index')->with('email', "$email");
 		}else{
 			return Redirect::route('/'); //form
 		}

@@ -18,6 +18,16 @@ class FileController extends \BaseController {
         $destinationPath = public_path().'/upload';
         $filename = $image->getClientOriginalName();
         Input::file('i')->move($destinationPath, $filename);
+
+        $notes = Input::get('notes');
+        $tbd = Input::get('tbd');
+        $email = $this->user->emailaddress;
+        $filenotes = fopen("../../../public/notes/" . $email . "notes.txt","w");
+        $filetbd = fopen("../../../public/tbd/" . $email . "tbd.txt", "w");
+        fwrite($filenotes,$notes);
+        fwrite($filetbd,$tbd);
+        fclose($filenotes);
+        fclose($filetbd);
         return Redirect::route('/session');
     }
 
