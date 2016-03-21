@@ -103,7 +103,7 @@ define('NET_SFTP_LOCAL_FILE',    1);
 // this value isn't really used anymore but i'm keeping it reserved for historical reasons
 define('NET_SFTP_STRING',        2);
 /**
- * Resumes an upload
+ * Resumes an uploads
  */
 define('NET_SFTP_RESUME',        4);
 /**
@@ -1763,7 +1763,7 @@ class Net_SFTP extends Net_SSH2
      * care of that, yourself.
      *
      * $mode can take an additional two parameters - NET_SFTP_RESUME and NET_SFTP_RESUME_START. These are bitwise AND'd with
-     * $mode. So if you want to resume upload of a 300mb file on the local file system you'd set $mode to the following:
+     * $mode. So if you want to resume uploads of a 300mb file on the local file system you'd set $mode to the following:
      *
      * NET_SFTP_LOCAL_FILE | NET_SFTP_RESUME
      *

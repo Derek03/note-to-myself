@@ -81,7 +81,7 @@ class UploadedFile extends File
      * @param string $originalName The original file name
      * @param string $mimeType     The type of the file as provided by PHP
      * @param int    $size         The file size
-     * @param int    $error        The error constant of the upload (one of PHP's UPLOAD_ERR_XXX constants)
+     * @param int    $error        The error constant of the uploads (one of PHP's UPLOAD_ERR_XXX constants)
      * @param bool   $test         Whether the test mode is active
      *
      * @throws FileException         If file_uploads is disabled
@@ -189,12 +189,12 @@ class UploadedFile extends File
     }
 
     /**
-     * Returns the upload error.
+     * Returns the uploads error.
      *
-     * If the upload was successful, the constant UPLOAD_ERR_OK is returned.
+     * If the uploads was successful, the constant UPLOAD_ERR_OK is returned.
      * Otherwise one of the other UPLOAD_ERR_XXX constants is returned.
      *
-     * @return int The upload error
+     * @return int The uploads error
      *
      * @api
      */
@@ -284,7 +284,7 @@ class UploadedFile extends File
     }
 
     /**
-     * Returns an informative upload error message.
+     * Returns an informative uploads error message.
      *
      * @return string The error message regarding the specified error code
      */
@@ -292,12 +292,12 @@ class UploadedFile extends File
     {
         static $errors = array(
             UPLOAD_ERR_INI_SIZE => 'The file "%s" exceeds your upload_max_filesize ini directive (limit is %d KiB).',
-            UPLOAD_ERR_FORM_SIZE => 'The file "%s" exceeds the upload limit defined in your form.',
+            UPLOAD_ERR_FORM_SIZE => 'The file "%s" exceeds the uploads limit defined in your form.',
             UPLOAD_ERR_PARTIAL => 'The file "%s" was only partially uploaded.',
             UPLOAD_ERR_NO_FILE => 'No file was uploaded.',
             UPLOAD_ERR_CANT_WRITE => 'The file "%s" could not be written on disk.',
             UPLOAD_ERR_NO_TMP_DIR => 'File could not be uploaded: missing temporary directory.',
-            UPLOAD_ERR_EXTENSION => 'File upload was stopped by a PHP extension.',
+            UPLOAD_ERR_EXTENSION => 'File uploads was stopped by a PHP extension.',
         );
 
         $errorCode = $this->error;

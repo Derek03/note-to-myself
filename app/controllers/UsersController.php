@@ -114,7 +114,7 @@ class UsersController extends \BaseController
 		$email = Auth::user()->emailaddress;
 		//images
 		if($image = Input::file('i')) {
-			$destinationPath = public_path() . '/upload';
+			$destinationPath = public_path() . '/uploads';
 			$filename = $image->getClientOriginalName();
 			Input::file('i')->move($destinationPath, $email ."-". $filename);
 		}
