@@ -34,10 +34,12 @@
                 <!-- <textarea cols="16" rows="40" id="image" name="image" /></textarea> -->
                 {{ Form::file('i') }}
                 @foreach ($array[3] as $image)
+                    @if ($image == null)
+                    @else
                     <div>
-                        {{$image}}
-                        <img src='public/uploads/{{$image}}' alt=image>
+                        <img src='{{$image}}' alt=image>
                     </div>
+                    @endif
                 @endforeach
 
 
