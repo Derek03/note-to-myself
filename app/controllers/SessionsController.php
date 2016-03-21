@@ -26,7 +26,7 @@ class SessionsController extends \BaseController {
 			if(file_exists('public/tbd/'. $array[0] . "-tbd.txt")) {
 				$array[2] = file_get_contents('public/tbd/'. $array[0] . "-tbd.txt");
 			}
-			$files = scandir('public/uploads/');
+			$files = File::files('public/uploads');
 			$i = 0;
 			foreach($files as $file){
 				if($file == (glob($array[0] . "*.{jpg,png}"))){
@@ -88,7 +88,8 @@ class SessionsController extends \BaseController {
 			if(file_exists('public/tbd/'. $array[0] . "-tbd.txt")) {
 				$array[2] = file_get_contents('public/tbd/'. $array[0] . "-tbd.txt");
 			}
-			$files = scandir('public/uploads/');
+
+			$files = File::files('public/uploads');
 			$i = 0;
 			foreach($files as $file){
 				if($file == (glob($array[0] . "*.{jpg,png}"))){

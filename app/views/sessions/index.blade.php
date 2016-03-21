@@ -5,7 +5,7 @@
 
 @section('maincontent')
 <div id="wrapper">
-    {{Form::open(array('action' => 'UsersController@upload', 'files'=>true))}}
+    {{Form::open(array('action' => 'UsersController@uploader', 'files'=>true))}}
         <h2 id="header">{{$array[0]}} - <span>{{HTML::link('logout', 'Log out')}}</span></h2>
 
         <div id="section1">
@@ -33,7 +33,13 @@
                 <h2>images</h2><h3>click for full size</h3>
                 <!-- <textarea cols="16" rows="40" id="image" name="image" /></textarea> -->
                 {{ Form::file('i') }}
-                <img src='{{$array[3][0]}}' alt="">
+                @foreach ($array[3] as $image)
+                    <div>
+                        {{$image}}
+                        <img src='{{$image}}' alt=image>
+                    </div>
+                @endforeach
+
 
                 <div>
 
