@@ -15,10 +15,8 @@ class FileController extends \BaseController {
 
     public function upload(){
         $image = Input::file('i');
-
         $destinationPath = public_path().'/upload';
         $filename = $image->getClientOriginalName();
-
         Input::file('i')->move($destinationPath, $filename);
         return Redirect::route('/session');
     }
